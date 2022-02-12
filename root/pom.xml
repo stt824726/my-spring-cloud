@@ -9,33 +9,34 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>wealth</artifactId>
-    <name>wealth</name>
+    <artifactId>root</artifactId>
+    <name>root</name>
     <version>1.0.0</version>
+
 
     <dependencies>
         <dependency>
             <groupId>com.stt</groupId>
-            <artifactId>wealth-facade</artifactId>
+            <artifactId>wealth</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>wealth</finalName>
         <resources>
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
-                    <include>**/*.properties</include>
                     <include>**/*.xml</include>
+                    <include>**/*.properties</include>
                 </includes>
                 <filtering>true</filtering>
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
-                    <include>**</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
                 </includes>
                 <filtering>true</filtering>
             </resource>
@@ -45,7 +46,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <classifier>exec</classifier>
+                    <includeSystemScope>true</includeSystemScope>
                 </configuration>
             </plugin>
         </plugins>
